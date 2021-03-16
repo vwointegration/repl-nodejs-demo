@@ -1,5 +1,5 @@
 const express = require('express');
-const vwoSDK = require('../../vwo-node-sdk');
+const vwoSDK = require('vwo-node-sdk');
 const vwoHelper = require('./vwo-helper');
 const { DemoController, TrackController, ActivateController } = require('./controllers/DemoController');
 const capList = require('./data');
