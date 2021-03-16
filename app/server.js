@@ -31,7 +31,6 @@ function getSettingsFile(req, res) {
 
 function launch(_req, res) {
   const vwoClientInstance = vwoSDK.launch({
-    isDevelopmentMode: false,
     settingsFile: currentSettingsFile
   });
 

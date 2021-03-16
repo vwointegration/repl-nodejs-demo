@@ -32,14 +32,14 @@ function ActivateController(req, res) {
       recommendations = [];
     } else if (variationName === 'Variation-1') {
       recommendations = [{
-        name: 'Cap XLV',
+        name: 'Cap VI',
         src: 'public/images/cap.svg',
-        price: '$8.25',
+        price: '$10.22',
         stars: 3
       }, {
-        name: 'Cap VIII',
+        name: 'Cap XXII',
         src: 'public/images/cap1.svg',
-        price: '$11.00',
+        price: '$8.98',
         stars: 4
       }];
     }
@@ -54,9 +54,9 @@ function ActivateController(req, res) {
 }
 
 function TrackController(req, res) {
-  let userId = req.query.userId;
+  const { campaignKey, userId, goalIdentifier } = req.query;
 
-  vwoHelper.get('vwoClientInstance').track(abCampaignKey, userId, abCampaigngoalIdentifier, {
+  vwoHelper.get('vwoClientInstance').track(campaignKey, userId, goalIdentifier, {
     customVariables,
     variationTargetingVariables
   });

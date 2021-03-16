@@ -71,7 +71,7 @@ $(document).ready(() => {
             for (let j = 0; j < cap.stars; j++) {
               starsHtml += `<span class="material-icons add-to-cart">star_rate</span>`;
             }
-            html += `<div class="product-item product-item">
+            html += `<div class="product-item">
               <img src="${cap.src}">
               <div class="product-name">${cap.name}</div>
               <div class="product-price-box">
@@ -87,6 +87,22 @@ $(document).ready(() => {
       })
     })
   }
+
+  window.addEventListener('click', (ev) => {
+    if (ev.target.parentElement.classList.contains('product-item')) {
+      let userId = document.getElementById('user-id').value;
+      let campaignKey = document.getElementById('campaign-key').value;
+      let goalIdentifier = document.getElementById('goal-identifier').value;
+
+      if (goalIdentifier) {
+        fetch(`/track?userId=${userId}&campaignKey=${campaignKey}&goalIdentifier=${goalIdentifier}`).then(response => {
+          response.json().then(_data => {
+            alert('Goal triggered');
+          })
+        });
+      }
+    }
+  });
 
   window.activateCampaign = function activateCampaign(destroyFeedback) {
     if (history.pushState) {
@@ -137,7 +153,7 @@ $(document).ready(() => {
           $('#sdk-result').html(`
             <span class="material-icons info-icon">info</span>
             <div style="margin-left: 50px;">
-              <strong>${userId}</strong> + (data.variationName ? ' becomes ' : ' does not become ') + 'part of campaign.'}
+              <strong>${userId}</strong> ${(data.variationName ? ' becomes ' : ' does not become ') + `part of the campaign: <strong>${campaignKey}</strong>`}
               <br />
               Serving
               <strong>${variation || 'Control'}</strong>

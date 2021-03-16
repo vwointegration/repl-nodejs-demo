@@ -29,7 +29,7 @@
                   <label for="account-id">Account ID</label>
                 </div>
                 <div class="input-field col s3">
-                  <input id="sdk-key" name="sdk-key" type="text" class="validate" required="">
+                  <input id="sdk-key" name="sdk-key" type="password" class="validate" required="">
                   <label for="sdk-key">SDK Key</label>
                 </div>
               </div>
@@ -71,6 +71,10 @@ vwoSDK.launch({
                   <input id="user-id" name="user-id" type="text" class="validate" required="">
                   <label for="user-id">User ID</label>
                 </div>
+                <div class="input-field col s3">
+                  <input id="goal-identifier" name="goal-identifier" type="text" class="validate" required="">
+                  <label for="goal-identifier">Goal Identifier</label>
+                </div>
               </div>
               <pre><code id="activate-code">// SDK Code to activate campaign
 vwoInstance.activate(campaignKey, userId);</code></pre>
@@ -97,7 +101,7 @@ vwoInstance.activate(campaignKey, userId);</code></pre>
                     border: 2px solid #b9b9b9;
                     font-size: 25px;
                     font-weight: bold;
-                  ">E-Mart Software Pvt. Ltd.</div>
+                  ">Online Caps Store</div>
 
                   <div class="row">
                     <div class="col s9" id="product-list">
