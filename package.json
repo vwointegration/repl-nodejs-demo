@@ -4,7 +4,7 @@
   "description": "VWO NodeJs SDK example",
   "main": "index.js",
   "scripts": {
-    "dev-app": "nodemon --inspect=0.0.0.0:9229 --legacy-watch --ignore node_modules index.js",
+    "dev-app": "node index.js",
     "lint": "eslint '**/*.js' --fix --cache",
     "start": "node index.js",
     "prettier": "./node_modules/prettier/bin-prettier.js src/**/*.js --write",
