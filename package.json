@@ -4,6 +4,7 @@
   "description": "VWO NodeJs SDK example",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --inspect=0.0.0.0:9229 --legacy-watch --ignore node_modules index.js",
     "dev-app": "node index.js",
     "lint": "eslint '**/*.js' --fix --cache",
     "start": "node index.js",
@@ -20,7 +21,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "vwo-node-sdk": "^1.13.0"
+    "vwo-node-sdk": "^1.18.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

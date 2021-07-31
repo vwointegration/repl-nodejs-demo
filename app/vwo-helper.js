@@ -2,7 +2,7 @@ let vwoHelper = {
   set: (key, data) => {
     vwoHelper[key] = data;
   },
-  get: (key) => {
+  get: key => {
     return vwoHelper[key];
   }
 };
