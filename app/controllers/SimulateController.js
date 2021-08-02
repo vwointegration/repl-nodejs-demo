@@ -65,7 +65,7 @@ function SimulateController(req, res) {
 
     let variationName = vwoInstance.activate(campaign.key, userId);
 
-    variationName = variationName || 'not-part-of-campaigns';
+    variationName = variationName || 'not-part-of-campaign';
 
     if (data[variationName]) {
       data[variationName] = data[variationName] + 1;

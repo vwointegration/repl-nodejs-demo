@@ -2,6 +2,7 @@ const express = require('express');
 const vwoSDK = require('vwo-node-sdk');
 const vwoHelper = require('./vwo-helper');
 const { DemoController, TrackController, ActivateController } = require('./controllers/DemoController');
+const MegController = require('./controllers/MegController');
 const { SimulateController } = require('./controllers/SimulateController');
 const capList = require('./data');
 
@@ -49,5 +50,12 @@ app.get('/launch', launch);
 app.get('/activate', ActivateController);
 app.get('/track', TrackController);
 app.get('/simulate', SimulateController);
+
+app.get('/meg', (_req, res) => {
+  res.render('meg', {
+    title: `VWO | MEG | Node-sdk example`
+  });
+});
+app.get('/meg-launch-activate', MegController);
 
 app.listen(process.env.PORT || 4000, () => {});

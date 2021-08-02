@@ -1,3 +1,11 @@
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #2196F3;
+}
+
+.card-tabs {
+  display: none;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -59,19 +67,19 @@ pre {
 .main-container {
   display: flex;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   max-height: 100%;
 }
 .left-container {
   flex: 0 1 50%;
   max-width: 50%;
-  min-height: 100%;
+  /* min-height: 100%; */
   margin: 0 10px;
 }
 .right-container {
   flex: 0 1 50%;
-  display: flex;
-  height: 100%;
+  /* display: flex; */
+  /* height: 100%; */
   max-width: 50%;
   flex-wrap: wrap;
   align-items: flex-start;

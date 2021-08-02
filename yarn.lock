@@ -3421,10 +3421,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vwo-node-sdk@^1.18.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/vwo-node-sdk/-/vwo-node-sdk-1.19.0.tgz#54d01592272f665b421e83dee0114dc8ad5fb5c0"
-  integrity sha512-+TTzsvK1ek3fVWmFxWudWqp5a4INVI2TaxFDayGyx01dmgGS3VD3U5arVuinovLnYZHMetGDY+veDv4R7vUSlA==
+vwo-node-sdk@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/vwo-node-sdk/-/vwo-node-sdk-1.19.1.tgz#bea0e3f12c2c2c0f53a8ec2ec4e5c3a0d2333600"
+  integrity sha512-oPwgpWGNae6VrOHaDNs1uHPSRSBix7bckZNna7fO8RXNUG4BM4Fsw6vcFADd7llAFT1nmyOrxUOcrAq6N8nRgw==
   dependencies:
     murmurhash "^0.0.2"
     superstruct "^0.10.12"

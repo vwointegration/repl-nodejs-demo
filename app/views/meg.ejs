@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>VWO server-side Experimentation</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/materializecss.min.css">
+    <link rel="stylesheet" href="public/css/mstepper.min.css" />
+    <link rel="stylesheet" href="public/css/index.css" />
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/materializecss.min.js"></script>
+    <script src="public/js/mstepper.min.js"></script>
+
+    <script src="public/js/meg.js"></script>
+    <script type="module" src="public/js/components/campaign.js"></script>
+  </head>
+<body>
+  <a href="/" style="position:fixed; top:10px; left: 20px;">HOME</a>
+
+  <div style="padding: 10px 20px;">
+    <h4 class="center  color-blue">VWO Node SDK Example</h4>
+      <ul class="stepper  linear">
+        <li class="step active">
+          <div data-step-label="Simulate Visitor" class="step-title waves-effect waves-dark">Step 1</div>
+          <div class="step-content">
+            <div class="row">
+              <div class="input-field col s3">
+                <input id="user-id" type="text" class="validate" required="">
+                <label for="user-id">Enter User ID or Generate</label>
+
+                <button id="random-user-id" class="waves-effect waves-light btn blue btn-small" onclick="generateUserId(); return false;">Generate</button>
+              </div>
+
+            </div>
+            <div class="step-actions">
+              <button class="waves-effect waves-dark btn blue next-step" data-feedback="goToSecondStep">NEXT</button>
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <div data-step-label="Campaign and Group Settings" class="step-title waves-effect waves-dark">Step 2</div>
+          <div class="step-content">
+            <div class="row">
+              <div class="col s9">
+                <div class="col s3">
+                  <my-campaign id="1"/>
+                </div>
+                <div class="col s3">
+                  <my-campaign id="2"/>
+                </div>
+                <div class="col s3">
+                  <my-campaign id="3"/>
+                </div>
+                <div class="col s3">
+                  <my-campaign id="4"/>
+                </div>
+              </div>
+              <div class="col s3">
+                <div class="card green">
+                  <div class="card-content white-text">
+                    <p>Group 1</p>
+                  </div>
+                  <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width tabs-transparent">
+                      <li class="tab"><a class="active" href="#g1"></a></li>
+                    </ul>
+                  </div>
+                  <div class="card-content white">
+                    <div id="g1">
+                      No campaign added
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="waves-effect waves-dark btn blue next-step" data-feedback="goToThirdStep">NEXT</button>
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <div data-step-label="Campaign Activation" class="step-title waves-effect waves-dark">Step 3</div>
+          <div class="step-content" style="">
+            <div class="main-container">
+              <div class="left-container">
+                <h5>User ID:</h5>
+                <span class="js-user-id">user</span>
+
+                <h5>Select a campaign to activate</h5>
+
+                <div class="input-field col s12">
+                  <select id="js-campaign-selection" onchange="launchAndActivate()" required>
+                    <option value="" disabled selected>Select a campaign</option>
+                    <option value="1">Campaign 1</option>
+                    <option value="2">Campaign 2</option>
+                    <option value="3">Campaign 3</option>
+                    <option value="4">Campaign 4</option>
+                  </select>
+                </div>
+              </div>
+              <div class="right-container">
+                <h5>Settings</h5>
+                <pre style="max-height: 50vh; width: 100%;"><code id="settings"></code></pre>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="waves-effect waves-dark btn blue next-step" data-feedback="goToFourthStep">NEXT</button>
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <div data-step-label="Show content based on SDK decision" class="step-title waves-effect waves-dark">Step 4</div>
+          <div class="step-content">
+            <div class="">
+              <h5>Variation Alloted for User ID: <span class="js-user-id" style="color: #00a8ff;"></span></h5>
+              <label id="js-variation-output"></label>
+              <h5>Reasoning</h5>
+              <pre style="max-height: 70vh; width: 100%;"><code id="logs"></code></pre>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <!-- <footer style="position: fixed;bottom: 0;padding: 10px;text-align: center;width: 100%;border-top: 1px solid #ccc;background: #eee;">
+    Copyright (c) 2021 Wingify Software Pvt. Ltd.
+  </footer> -->
+</body>
+</html>
